@@ -26,7 +26,6 @@ def unifac_aux(x, qi, ri, ri34, Vk, Qk, tethai, amn, psi):
 
     SumAi = tethai@psi
     SumBi = np.tensordot((tethai/SumAi), psi, axes=(1, 1))
-    print(Qk, SumAi, SumBi)
     Gi = Qk * (1 - np.log(SumAi) - SumBi)
 
     lngamar = (Vk*(Gm - Gi)).sum(axis=1)
